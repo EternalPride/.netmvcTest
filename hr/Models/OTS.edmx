@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OTSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Achievement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Semester" Type="nvarchar" MaxLength="100" />
+          <Property Name="WoType" Type="nvarchar" MaxLength="20" />
+          <Property Name="XHID" Type="int" />
+        </EntityType>
+        <EntityType Name="Administrator">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="100" />
+          <Property Name="WoType" Type="nvarchar" MaxLength="20" />
+          <Property Name="Xxfb" Type="nvarchar" MaxLength="20" />
+          <Property Name="Term" Type="nvarchar(max)" />
+          <Property Name="Course" Type="nvarchar" MaxLength="30" />
+          <Property Name="Section" Type="nvarchar" MaxLength="30" />
+          <Property Name="Class" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="30" />
+          <Property Name="Teaching" Type="nvarchar" MaxLength="50" />
+          <Property Name="Course selection" Type="nvarchar" MaxLength="30" />
+          <Property Name="Question type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="AcXH" />
+          </Key>
+          <Property Name="AcXH" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="AcXClass" Type="nvarchar" MaxLength="50" />
+          <Property Name="AcOver" Type="nvarchar" MaxLength="50" />
+          <Property Name="AcSelect" Type="nvarchar" MaxLength="300" />
+          <Property Name="AcName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AcDetailed" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Course selection">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Curriculum" Type="nvarchar" MaxLength="100" />
+          <Property Name="Term" Type="datetime" />
+          <Property Name="Course" Type="datetime" />
+          <Property Name="Place" Type="nvarchar(max)" />
+          <Property Name="Assessment" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Examination">
+          <Key>
+            <PropertyRef Name="WName" />
+          </Key>
+          <Property Name="WName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="WTime" Type="datetime" />
+          <Property Name="WCJ" Type="nvarchar" MaxLength="100" />
+          <Property Name="WType" Type="nvarchar" MaxLength="20" />
+          <Property Name="WXH" Type="nvarchar" MaxLength="20" />
+          <Property Name="WStime" Type="datetime" />
+          <Property Name="WEtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Item bank">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="QusetionName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TestpaperType" Type="nvarchar" MaxLength="100" />
+          <Property Name="TestTime" Type="datetime" />
+          <Property Name="Tsetcheck" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Paper">
+          <Key>
+            <PropertyRef Name="TestpaperID" />
+          </Key>
+          <Property Name="TestpaperID" Type="int" Nullable="false" />
+          <Property Name="TestpaperName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TestpaperType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TeacherID" Type="nvarchar" MaxLength="50" />
+          <Property Name="TestTime" Type="datetime" />
+          <Property Name="TestContent" Type="nvarchar(max)" />
+          <Property Name="Tsetexamine" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuestionID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Release">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="100" />
+          <Property Name="WoType" Type="nvarchar" MaxLength="20" />
+          <Property Name="Xxfb" Type="nvarchar" MaxLength="20" />
+          <Property Name="Term" Type="datetime" />
+          <Property Name="Course" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="XSID" />
+          </Key>
+          <Property Name="XSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="XSName" Type="nvarchar" MaxLength="50" />
+          <Property Name="XSGender" Type="nvarchar" MaxLength="50" />
+          <Property Name="XSEnrollmentYear" Type="nvarchar" MaxLength="50" />
+          <Property Name="Studentclass" Type="nvarchar" MaxLength="50" />
+          <Property Name="Studentgrade" Type="nvarchar" MaxLength="50" />
+          <Property Name="Studentbirth" Type="nvarchar" MaxLength="50" />
+          <Property Name="StudentState" Type="nvarchar" MaxLength="50" />
+          <Property Name="StudentRemarks" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="TeacherID" />
+          </Key>
+          <Property Name="TeacherID" Type="int" Nullable="false" />
+          <Property Name="TeacherName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TeacherTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="Department" Type="nvarchar" MaxLength="20" />
+          <Property Name="Major" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tcinformation" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Teaching">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Standard" Type="nvarchar" MaxLength="100" />
+          <Property Name="Qualified" Type="nvarchar" MaxLength="20" />
+          <Property Name="Term" Type="datetime" />
+          <Property Name="Course" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="UName" />
+          </Key>
+          <Property Name="UName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="UPassword" Type="nvarchar" MaxLength="16" />
+          <Property Name="UType" Type="nvarchar" MaxLength="10" />
+          <Property Name="UTel" Type="nvarchar" MaxLength="11" />
+          <Property Name="UEmail" Type="nvarchar" MaxLength="30" />
+          <Property Name="UHeadPhoto" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="OTSModelStoreContainer">
+          <EntitySet Name="Achievement" EntityType="Self.Achievement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Administrator" EntityType="Self.Administrator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Course selection" EntityType="Self.Course selection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Examination" EntityType="Self.Examination" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item bank" EntityType="Self.Item bank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paper" EntityType="Self.Paper" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Release" EntityType="Self.Release" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teaching" EntityType="Self.Teaching" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OTSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Achievement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Semester" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WoType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="XHID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Administrator">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WoType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Xxfb" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Term" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Course" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Section" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Teaching" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Course_selection" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Question_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="AcXH" />
+          </Key>
+          <Property Name="AcXH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AcXClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AcOver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AcSelect" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="AcName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AcDetailed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Course_selection">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Curriculum" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Term" Type="DateTime" Precision="3" />
+          <Property Name="Course" Type="DateTime" Precision="3" />
+          <Property Name="Place" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Assessment" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Examination">
+          <Key>
+            <PropertyRef Name="WName" />
+          </Key>
+          <Property Name="WName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WTime" Type="DateTime" Precision="3" />
+          <Property Name="WCJ" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WXH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WStime" Type="DateTime" Precision="3" />
+          <Property Name="WEtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Item_bank">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="QusetionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TestpaperType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TestTime" Type="DateTime" Precision="3" />
+          <Property Name="Tsetcheck" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Paper">
+          <Key>
+            <PropertyRef Name="TestpaperID" />
+          </Key>
+          <Property Name="TestpaperID" Type="Int32" Nullable="false" />
+          <Property Name="TestpaperName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TestpaperType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TeacherID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TestTime" Type="DateTime" Precision="3" />
+          <Property Name="TestContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tsetexamine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuestionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Release">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WoType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Xxfb" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Term" Type="DateTime" Precision="3" />
+          <Property Name="Course" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="XSID" />
+          </Key>
+          <Property Name="XSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="XSName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="XSGender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="XSEnrollmentYear" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Studentclass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Studentgrade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Studentbirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StudentState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StudentRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="TeacherID" />
+          </Key>
+          <Property Name="TeacherID" Type="Int32" Nullable="false" />
+          <Property Name="TeacherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TeacherTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Major" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Tcinformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Teaching">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Standard" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Qualified" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Term" Type="DateTime" Precision="3" />
+          <Property Name="Course" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="UName" />
+          </Key>
+          <Property Name="UName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UPassword" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="UType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="UTel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="UEmail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="UHeadPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="OTSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Achievement" EntityType="Self.Achievement" />
+          <EntitySet Name="Administrator" EntityType="Self.Administrator" />
+          <EntitySet Name="Class" EntityType="Self.Class" />
+          <EntitySet Name="Course_selection" EntityType="Self.Course_selection" />
+          <EntitySet Name="Examination" EntityType="Self.Examination" />
+          <EntitySet Name="Item_bank" EntityType="Self.Item_bank" />
+          <EntitySet Name="Paper" EntityType="Self.Paper" />
+          <EntitySet Name="Release" EntityType="Self.Release" />
+          <EntitySet Name="Student" EntityType="Self.Student" />
+          <EntitySet Name="Teacher" EntityType="Self.Teacher" />
+          <EntitySet Name="Teaching" EntityType="Self.Teaching" />
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OTSModelStoreContainer" CdmEntityContainer="OTSEntities">
+          <EntitySetMapping Name="Achievement">
+            <EntityTypeMapping TypeName="OTSModel.Achievement">
+              <MappingFragment StoreEntitySet="Achievement">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="WoType" ColumnName="WoType" />
+                <ScalarProperty Name="XHID" ColumnName="XHID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Administrator">
+            <EntityTypeMapping TypeName="OTSModel.Administrator">
+              <MappingFragment StoreEntitySet="Administrator">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="WoType" ColumnName="WoType" />
+                <ScalarProperty Name="Xxfb" ColumnName="Xxfb" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Teaching" ColumnName="Teaching" />
+                <ScalarProperty Name="Course_selection" ColumnName="Course selection" />
+                <ScalarProperty Name="Question_type" ColumnName="Question type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Class">
+            <EntityTypeMapping TypeName="OTSModel.Class">
+              <MappingFragment StoreEntitySet="Class">
+                <ScalarProperty Name="AcXH" ColumnName="AcXH" />
+                <ScalarProperty Name="AcXClass" ColumnName="AcXClass" />
+                <ScalarProperty Name="AcOver" ColumnName="AcOver" />
+                <ScalarProperty Name="AcSelect" ColumnName="AcSelect" />
+                <ScalarProperty Name="AcName" ColumnName="AcName" />
+                <ScalarProperty Name="AcDetailed" ColumnName="AcDetailed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Course_selection">
+            <EntityTypeMapping TypeName="OTSModel.Course_selection">
+              <MappingFragment StoreEntitySet="Course selection">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Curriculum" ColumnName="Curriculum" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="Assessment" ColumnName="Assessment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Examination">
+            <EntityTypeMapping TypeName="OTSModel.Examination">
+              <MappingFragment StoreEntitySet="Examination">
+                <ScalarProperty Name="WName" ColumnName="WName" />
+                <ScalarProperty Name="WTime" ColumnName="WTime" />
+                <ScalarProperty Name="WCJ" ColumnName="WCJ" />
+                <ScalarProperty Name="WType" ColumnName="WType" />
+                <ScalarProperty Name="WXH" ColumnName="WXH" />
+                <ScalarProperty Name="WStime" ColumnName="WStime" />
+                <ScalarProperty Name="WEtime" ColumnName="WEtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Item_bank">
+            <EntityTypeMapping TypeName="OTSModel.Item_bank">
+              <MappingFragment StoreEntitySet="Item bank">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="QusetionName" ColumnName="QusetionName" />
+                <ScalarProperty Name="TestpaperType" ColumnName="TestpaperType" />
+                <ScalarProperty Name="TestTime" ColumnName="TestTime" />
+                <ScalarProperty Name="Tsetcheck" ColumnName="Tsetcheck" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paper">
+            <EntityTypeMapping TypeName="OTSModel.Paper">
+              <MappingFragment StoreEntitySet="Paper">
+                <ScalarProperty Name="TestpaperID" ColumnName="TestpaperID" />
+                <ScalarProperty Name="TestpaperName" ColumnName="TestpaperName" />
+                <ScalarProperty Name="TestpaperType" ColumnName="TestpaperType" />
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+                <ScalarProperty Name="TestTime" ColumnName="TestTime" />
+                <ScalarProperty Name="TestContent" ColumnName="TestContent" />
+                <ScalarProperty Name="Tsetexamine" ColumnName="Tsetexamine" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Release">
+            <EntityTypeMapping TypeName="OTSModel.Release">
+              <MappingFragment StoreEntitySet="Release">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="WoType" ColumnName="WoType" />
+                <ScalarProperty Name="Xxfb" ColumnName="Xxfb" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student">
+            <EntityTypeMapping TypeName="OTSModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="XSID" ColumnName="XSID" />
+                <ScalarProperty Name="XSName" ColumnName="XSName" />
+                <ScalarProperty Name="XSGender" ColumnName="XSGender" />
+                <ScalarProperty Name="XSEnrollmentYear" ColumnName="XSEnrollmentYear" />
+                <ScalarProperty Name="Studentclass" ColumnName="Studentclass" />
+                <ScalarProperty Name="Studentgrade" ColumnName="Studentgrade" />
+                <ScalarProperty Name="Studentbirth" ColumnName="Studentbirth" />
+                <ScalarProperty Name="StudentState" ColumnName="StudentState" />
+                <ScalarProperty Name="StudentRemarks" ColumnName="StudentRemarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teacher">
+            <EntityTypeMapping TypeName="OTSModel.Teacher">
+              <MappingFragment StoreEntitySet="Teacher">
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+                <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+                <ScalarProperty Name="TeacherTitle" ColumnName="TeacherTitle" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="Tcinformation" ColumnName="Tcinformation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teaching">
+            <EntityTypeMapping TypeName="OTSModel.Teaching">
+              <MappingFragment StoreEntitySet="Teaching">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Standard" ColumnName="Standard" />
+                <ScalarProperty Name="Qualified" ColumnName="Qualified" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfo">
+            <EntityTypeMapping TypeName="OTSModel.UserInfo">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="UName" ColumnName="UName" />
+                <ScalarProperty Name="UPassword" ColumnName="UPassword" />
+                <ScalarProperty Name="UType" ColumnName="UType" />
+                <ScalarProperty Name="UTel" ColumnName="UTel" />
+                <ScalarProperty Name="UEmail" ColumnName="UEmail" />
+                <ScalarProperty Name="UHeadPhoto" ColumnName="UHeadPhoto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
