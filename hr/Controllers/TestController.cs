@@ -19,5 +19,10 @@ namespace hr.Controllers
             list.Add(pe);
             return View(list);
         }
+        public ActionResult Test() 
+        {
+            Models.InitData data = new Models.InitData();
+            return View(data);
+        }
 	}
 }

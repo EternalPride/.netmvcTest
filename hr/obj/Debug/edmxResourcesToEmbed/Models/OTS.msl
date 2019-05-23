@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OTSModelStoreContainer" CdmEntityContainer="OTSEntities">
+    <EntitySetMapping Name="Achievement">
+      <EntityTypeMapping TypeName="OTSModel.Achievement">
+        <MappingFragment StoreEntitySet="Achievement">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="WoType" ColumnName="WoType" />
+          <ScalarProperty Name="XHID" ColumnName="XHID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Administrator">
+      <EntityTypeMapping TypeName="OTSModel.Administrator">
+        <MappingFragment StoreEntitySet="Administrator">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="WoType" ColumnName="WoType" />
+          <ScalarProperty Name="Xxfb" ColumnName="Xxfb" />
+          <ScalarProperty Name="Term" ColumnName="Term" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Teaching" ColumnName="Teaching" />
+          <ScalarProperty Name="Course_selection" ColumnName="Course selection" />
+          <ScalarProperty Name="Question_type" ColumnName="Question type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Class">
+      <EntityTypeMapping TypeName="OTSModel.Class">
+        <MappingFragment StoreEntitySet="Class">
+          <ScalarProperty Name="AcXH" ColumnName="AcXH" />
+          <ScalarProperty Name="AcXClass" ColumnName="AcXClass" />
+          <ScalarProperty Name="AcOver" ColumnName="AcOver" />
+          <ScalarProperty Name="AcSelect" ColumnName="AcSelect" />
+          <ScalarProperty Name="AcName" ColumnName="AcName" />
+          <ScalarProperty Name="AcDetailed" ColumnName="AcDetailed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Course_selection">
+      <EntityTypeMapping TypeName="OTSModel.Course_selection">
+        <MappingFragment StoreEntitySet="Course selection">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Curriculum" ColumnName="Curriculum" />
+          <ScalarProperty Name="Term" ColumnName="Term" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="Assessment" ColumnName="Assessment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Examination">
+      <EntityTypeMapping TypeName="OTSModel.Examination">
+        <MappingFragment StoreEntitySet="Examination">
+          <ScalarProperty Name="WName" ColumnName="WName" />
+          <ScalarProperty Name="WTime" ColumnName="WTime" />
+          <ScalarProperty Name="WCJ" ColumnName="WCJ" />
+          <ScalarProperty Name="WType" ColumnName="WType" />
+          <ScalarProperty Name="WXH" ColumnName="WXH" />
+          <ScalarProperty Name="WStime" ColumnName="WStime" />
+          <ScalarProperty Name="WEtime" ColumnName="WEtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Item_bank">
+      <EntityTypeMapping TypeName="OTSModel.Item_bank">
+        <MappingFragment StoreEntitySet="Item bank">
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="QusetionName" ColumnName="QusetionName" />
+          <ScalarProperty Name="TestpaperType" ColumnName="TestpaperType" />
+          <ScalarProperty Name="TestTime" ColumnName="TestTime" />
+          <ScalarProperty Name="Tsetcheck" ColumnName="Tsetcheck" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paper">
+      <EntityTypeMapping TypeName="OTSModel.Paper">
+        <MappingFragment StoreEntitySet="Paper">
+          <ScalarProperty Name="TestpaperID" ColumnName="TestpaperID" />
+          <ScalarProperty Name="TestpaperName" ColumnName="TestpaperName" />
+          <ScalarProperty Name="TestpaperType" ColumnName="TestpaperType" />
+          <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+          <ScalarProperty Name="TestTime" ColumnName="TestTime" />
+          <ScalarProperty Name="TestContent" ColumnName="TestContent" />
+          <ScalarProperty Name="Tsetexamine" ColumnName="Tsetexamine" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Release">
+      <EntityTypeMapping TypeName="OTSModel.Release">
+        <MappingFragment StoreEntitySet="Release">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="WoType" ColumnName="WoType" />
+          <ScalarProperty Name="Xxfb" ColumnName="Xxfb" />
+          <ScalarProperty Name="Term" ColumnName="Term" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student">
+      <EntityTypeMapping TypeName="OTSModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="XSID" ColumnName="XSID" />
+          <ScalarProperty Name="XSName" ColumnName="XSName" />
+          <ScalarProperty Name="XSGender" ColumnName="XSGender" />
+          <ScalarProperty Name="XSEnrollmentYear" ColumnName="XSEnrollmentYear" />
+          <ScalarProperty Name="Studentclass" ColumnName="Studentclass" />
+          <ScalarProperty Name="Studentgrade" ColumnName="Studentgrade" />
+          <ScalarProperty Name="Studentbirth" ColumnName="Studentbirth" />
+          <ScalarProperty Name="StudentState" ColumnName="StudentState" />
+          <ScalarProperty Name="StudentRemarks" ColumnName="StudentRemarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teacher">
+      <EntityTypeMapping TypeName="OTSModel.Teacher">
+        <MappingFragment StoreEntitySet="Teacher">
+          <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+          <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+          <ScalarProperty Name="TeacherTitle" ColumnName="TeacherTitle" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Major" ColumnName="Major" />
+          <ScalarProperty Name="Tcinformation" ColumnName="Tcinformation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teaching">
+      <EntityTypeMapping TypeName="OTSModel.Teaching">
+        <MappingFragment StoreEntitySet="Teaching">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Standard" ColumnName="Standard" />
+          <ScalarProperty Name="Qualified" ColumnName="Qualified" />
+          <ScalarProperty Name="Term" ColumnName="Term" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="OTSModel.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="UPassword" ColumnName="UPassword" />
+          <ScalarProperty Name="UType" ColumnName="UType" />
+          <ScalarProperty Name="UTel" ColumnName="UTel" />
+          <ScalarProperty Name="UEmail" ColumnName="UEmail" />
+          <ScalarProperty Name="UHeadPhoto" ColumnName="UHeadPhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

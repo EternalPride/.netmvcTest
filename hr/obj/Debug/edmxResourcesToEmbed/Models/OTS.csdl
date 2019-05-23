@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OTSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Achievement">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Semester" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WoType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="XHID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WoType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Xxfb" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Term" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Course" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Section" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Teaching" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Course_selection" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Question_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="AcXH" />
+    </Key>
+    <Property Name="AcXH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AcXClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AcOver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AcSelect" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="AcName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AcDetailed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Course_selection">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Curriculum" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Term" Type="DateTime" Precision="3" />
+    <Property Name="Course" Type="DateTime" Precision="3" />
+    <Property Name="Place" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Assessment" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Examination">
+    <Key>
+      <PropertyRef Name="WName" />
+    </Key>
+    <Property Name="WName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WTime" Type="DateTime" Precision="3" />
+    <Property Name="WCJ" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="WXH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="WStime" Type="DateTime" Precision="3" />
+    <Property Name="WEtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Item_bank">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="QusetionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TestpaperType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TestTime" Type="DateTime" Precision="3" />
+    <Property Name="Tsetcheck" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Paper">
+    <Key>
+      <PropertyRef Name="TestpaperID" />
+    </Key>
+    <Property Name="TestpaperID" Type="Int32" Nullable="false" />
+    <Property Name="TestpaperName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TestpaperType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TeacherID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TestTime" Type="DateTime" Precision="3" />
+    <Property Name="TestContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tsetexamine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QuestionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Release">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WoType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Xxfb" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Term" Type="DateTime" Precision="3" />
+    <Property Name="Course" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="XSID" />
+    </Key>
+    <Property Name="XSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="XSName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="XSGender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="XSEnrollmentYear" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Studentclass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Studentgrade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Studentbirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudentState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudentRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="TeacherID" />
+    </Key>
+    <Property Name="TeacherID" Type="Int32" Nullable="false" />
+    <Property Name="TeacherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TeacherTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Major" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Tcinformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Teaching">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Standard" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Qualified" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Term" Type="DateTime" Precision="3" />
+    <Property Name="Course" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UName" />
+    </Key>
+    <Property Name="UName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UPassword" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="UType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UTel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="UEmail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="UHeadPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="OTSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Achievement" EntityType="Self.Achievement" />
+    <EntitySet Name="Administrator" EntityType="Self.Administrator" />
+    <EntitySet Name="Class" EntityType="Self.Class" />
+    <EntitySet Name="Course_selection" EntityType="Self.Course_selection" />
+    <EntitySet Name="Examination" EntityType="Self.Examination" />
+    <EntitySet Name="Item_bank" EntityType="Self.Item_bank" />
+    <EntitySet Name="Paper" EntityType="Self.Paper" />
+    <EntitySet Name="Release" EntityType="Self.Release" />
+    <EntitySet Name="Student" EntityType="Self.Student" />
+    <EntitySet Name="Teacher" EntityType="Self.Teacher" />
+    <EntitySet Name="Teaching" EntityType="Self.Teaching" />
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" />
+  </EntityContainer>
+</Schema>

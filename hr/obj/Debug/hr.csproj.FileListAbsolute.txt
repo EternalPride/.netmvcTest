@@ -72,3 +72,5 @@ C:\Users\Administrator\Desktop\hr\hr\bin\zh-Hans\Microsoft.Owin.Security.Microso
 C:\Users\Administrator\Desktop\hr\hr\obj\Debug\hr.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\hr\hr\obj\Debug\hr.dll
 C:\Users\Administrator\Desktop\hr\hr\obj\Debug\hr.pdb
+C:\Users\Administrator\Desktop\hr\.netmvcTest\hr\obj\Debug\hr.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\hr\.netmvcTest\hr\obj\Debug\hr.dll
