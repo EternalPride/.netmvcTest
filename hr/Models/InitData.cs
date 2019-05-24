@@ -9,12 +9,16 @@ namespace hr.Models
     {
         public IEnumerable<Class> AcXH { get; set; }
         public IEnumerable<Achievement> ID { get; set; }
+        #region   也不知道
         public InitData()
-        {
+        {  
+
             OTSEntities db = new OTSEntities();
             AcXH = db.Class.ToList();
             ID = db.Achievement.ToList();
 
+
         }
+        #endregion
     }
 }
