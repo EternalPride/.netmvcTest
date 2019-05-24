@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -46,7 +47,7 @@ namespace hr.Controllers
             model.Semester = Request["Sem"];
             model.WoType = Request["Wotype"];
             model.XHID = Convert.ToInt32(coll["XHID"]);
-            db.Achievement.Add(model);
+            db.Entry(model).State = EntityState.Modified;
             int result = db.SaveChanges();
             if (result > 0)
             {
@@ -62,7 +63,7 @@ namespace hr.Controllers
 
         }
         #endregion
-        public ActionResult AChEdit(int id, FormCollection coll) 
+        public ActionResult AChEdit(int id) 
         {
             var q = db.Achievement.Where(s => s.ID == id).FirstOrDefault();
             //摆渡人
@@ -70,7 +71,29 @@ namespace hr.Controllers
             ViewBag.Name = q.Name;
             ViewBag.Sem = q.Semester;
             ViewBag.XHID = q.XHID;
+            Session["model"] = q;
             return View(q);
         }
+        [HttpPost]
+        public ActionResult AChEdit(FormCollection coll, string ANmae)
+        {
+            Models.Achievement model = Session["model"] as Models.Achievement;
+            model.Name = ANmae;
+            model.Semester = Request["Sem"];
+            model.WoType = Request["Wotype"];
+            model.XHID = Convert.ToInt32(coll["XHID"]);
+            db.Achievement.Add(model);
+            int result = db.SaveChanges();
+            if (result > 0)
+            {
+                return Content("添加成功");
+
+            }
+            else
+            {
+                return Content("失败");
+            }
+        }
+
     }
 }
