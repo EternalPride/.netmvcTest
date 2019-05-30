@@ -293,6 +293,7 @@
     <Content Include="Views\Ach\Add.cshtml" />
     <Content Include="Views\Ach\Index.cshtml" />
     <Content Include="Views\Ach\AChEdit.cshtml" />
+    <Content Include="Views\Test\C#test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
