@@ -47,7 +47,8 @@ namespace hr.Controllers
             model.Semester = Request["Sem"];
             model.WoType = Request["Wotype"];
             model.XHID = Convert.ToInt32(coll["XHID"]);
-            db.Entry(model).State = EntityState.Modified;
+            db.Entry(model).State = EntityState.Added;
+            //db.Achievement.Add(model);
             int result = db.SaveChanges();
             if (result > 0)
             {
@@ -82,11 +83,11 @@ namespace hr.Controllers
             model.Semester = Request["Sem"];
             model.WoType = Request["Wotype"];
             model.XHID = Convert.ToInt32(coll["XHID"]);
-            db.Achievement.Add(model);
+            db.Entry(model).State = EntityState.Modified;
             int result = db.SaveChanges();
             if (result > 0)
             {
-                return Content("添加成功");
+                return Content("修改成功");
 
             }
             else
