@@ -24,3 +24,17 @@
 @Html.CheckBox("s9", true, new { id = "s" })方法4
 
 @Html.DropDownList("Department", ViewBag.list as IEnumerable<SelectListItem>, "--请选择--")
+方法1）@Html.Hidden("S11")
+方法2）@Html.Hidden("S11","数据值")
+方法3）@Html.Hidden("S11", "数据值", new { id="s"})
+@Html.Label("方法1")
+@Html.Label("方法2", new { style="color:red;font-weight:bold;"})
+@Html.Password("S14")
+@Html.Password("S14", "123456", new { style = "width:100px" })
+@Html.RadioButton("S15","数据值") 方法1
+@Html.RadioButton("s15","数据值",true) 方法2
+@Html.RadioButton("s15", "数据值", new { id="s"}) 方法3
+@Html.RadioButton("s15", "数据值",true, new { id = "ss" }) 方法4
+@Html.TextArea("s16")
+@Html.TextArea("s16", new {@style="width:100px;height:50px" })
+@Html.TextBox("s17", "方法3", new { style="width:100px"})
