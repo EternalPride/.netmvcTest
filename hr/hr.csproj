@@ -163,6 +163,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MethodController.cs" />
     <Compile Include="Controllers\SrtongController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -297,6 +298,10 @@
     <Content Include="Views\Test\C#test.cshtml" />
     <Content Include="Views\Srtong\Creat.cshtml" />
     <Content Include="Views\Srtong\Index.cshtml" />
+    <Content Include="Views\Test\testff.cshtml" />
+    <Content Include="Views\Test\creat.cshtml" />
+    <Content Include="Views\Method\Index.cshtml" />
+    <Content Include="Views\Method\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "creat";
+}
+
+<h2>creat</h2>
+
+<h2>creat</h2>
+@using (Html.BeginForm("s7", "home"))
+{<li>方法</li> }
+@using (Html.BeginForm("s7", "home", FormMethod.Get))
+{<li>方法</li> }
+@using (Html.BeginForm("s7", "home", new { id = 1 }))
+{<li>方法</li> }
+@using (Html.BeginForm("s7", "home", FormMethod.Get, new { name = "s7" }))
+{<li>方法</li> }
+@using (Html.BeginForm("s7", "home", new { id = 1 }, FormMethod.Get))
+{<li>方法</li> }
+@using (Html.BeginForm("s7", "home", new { id = 1 }, FormMethod.Get, new { name = "s7" }))
+{<li>方法</li> }
+@Html.CheckBox("s9") 方法1
+@Html.CheckBox("s9", true) 方法2
+@Html.CheckBox("s9", new { id = "s" })方法（3）
+@Html.CheckBox("s9", true, new { id = "s" })方法4
+
+@Html.DropDownList("Department", ViewBag.list as IEnumerable<SelectListItem>, "--请选择--")
