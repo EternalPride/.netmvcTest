@@ -24,5 +24,19 @@ namespace hr.Controllers
             Models.InitData data = new Models.InitData();
             return View(data);
         }
+        public ActionResult testff() 
+        {
+            return View();
+        }
+
+        public ActionResult creat()
+        {
+            List<string> list = new List <string>();
+            list.Add("启用");
+            list.Add("禁用");
+            SelectList mlist = new SelectList(list);
+            ViewBag.list = mlist;
+            return View();
+        }
 	}
 }
