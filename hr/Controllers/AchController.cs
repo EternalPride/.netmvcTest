@@ -95,7 +95,11 @@ namespace hr.Controllers
                 return Content("失败");
             }
         }
-       
+       [HttpPost]
+        public ActionResult Add1() 
+       {  //暂时错误
+           return View();
+       }
 
     }
 }

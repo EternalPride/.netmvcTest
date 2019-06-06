@@ -38,5 +38,9 @@ namespace hr.Controllers
             ViewBag.list = mlist;
             return View();
         }
+        public ActionResult add()
+        {
+            return View();
+        }
 	}
 }
