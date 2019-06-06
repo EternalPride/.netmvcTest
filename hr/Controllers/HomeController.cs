@@ -26,5 +26,9 @@ namespace hr.Controllers
 
             return View();
         }
+        public ActionResult MyView() 
+        {
+            return View();
+        }
     }
 }
