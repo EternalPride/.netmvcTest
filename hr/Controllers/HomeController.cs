@@ -34,7 +34,7 @@ namespace hr.Controllers
         {
             return View();
         }
-        public ActionResult Phr(int id) 
+        public ActionResult Phr(int? id) 
         {
             if (id != null) 
             {
