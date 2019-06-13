@@ -304,6 +304,8 @@
     <Content Include="Views\Home\MyView.cshtml" />
     <Content Include="Views\Ach\Add1.cshtml" />
     <Content Include="Views\Test\add.cshtml" />
+    <Content Include="Views\Home\hr.cshtml" />
+    <Content Include="Views\Home\Phr.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

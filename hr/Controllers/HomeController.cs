@@ -30,5 +30,23 @@ namespace hr.Controllers
         {
             return View();
         }
+        public ActionResult hr() 
+        {
+            return View();
+        }
+        public ActionResult Phr(int id) 
+        {
+            if (id != null) 
+            {
+                ViewBag.flag = true;
+                ViewBag.id = id;
+
+            }
+            else
+            
+                ViewBag.flag = false;
+                return PartialView();
+          
+        }
     }
 }

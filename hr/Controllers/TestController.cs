@@ -42,9 +42,9 @@ namespace hr.Controllers
         {
             return View();
         }
-        public ActionResult add()
-        {
-            return View();
-        }
+        //public ActionResult add()
+        //{
+        //    return View();
+        //}
 	}
 }
