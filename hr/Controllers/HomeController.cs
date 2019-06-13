@@ -48,5 +48,13 @@ namespace hr.Controllers
                 return PartialView();
           
         }
+        public ActionResult hr19()
+        {
+           Models.StudentEntities db = new Models.StudentEntities();
+
+           Models.Student s1 = db.Student.FirstOrDefault();
+            ViewBag["hr19"] = "";
+            return View(s1);
+        }
     }
 }

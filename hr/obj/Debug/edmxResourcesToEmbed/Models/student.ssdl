@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StudentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="Cno" />
+    </Key>
+    <Property Name="Cno" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Cname" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cpno" Type="nvarchar" MaxLength="5" />
+    <Property Name="Ccredit" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="SC">
+    <Key>
+      <PropertyRef Name="Sno" />
+      <PropertyRef Name="Cno" />
+    </Key>
+    <Property Name="Sno" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Cno" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Grade" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Sname" Type="nvarchar" MaxLength="8" />
+    <Property Name="Ssex" Type="nvarchar" MaxLength="2" />
+    <Property Name="Sage" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Sdept" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="StudentModelStoreContainer">
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SC" EntityType="Self.SC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

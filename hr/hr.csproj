@@ -178,6 +178,9 @@
     <Compile Include="Models\Class.cs">
       <DependentUpon>OTS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Course.cs">
+      <DependentUpon>student.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Course_selection.cs">
       <DependentUpon>OTS.tt</DependentUpon>
     </Compile>
@@ -211,8 +214,26 @@
     <Compile Include="Models\Release.cs">
       <DependentUpon>OTS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SC.cs">
+      <DependentUpon>student.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\student.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>student.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Student.cs">
-      <DependentUpon>OTS.tt</DependentUpon>
+      <DependentUpon>student.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\student.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>student.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\student1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>student.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Teacher.cs">
       <DependentUpon>OTS.tt</DependentUpon>
@@ -251,6 +272,23 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>OTS.edmx</DependentUpon>
       <LastGenOutput>OTS.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\student.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>student.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\student.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>student.edmx</DependentUpon>
+      <LastGenOutput>student.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\student.edmx.diagram">
+      <DependentUpon>student.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\student.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>student.edmx</DependentUpon>
+      <LastGenOutput>student1.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -306,6 +344,8 @@
     <Content Include="Views\Test\add.cshtml" />
     <Content Include="Views\Home\hr.cshtml" />
     <Content Include="Views\Home\Phr.cshtml" />
+    <Content Include="Views\Home\hr19.cshtml" />
+    <Content Include="Views\Home\hr119.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

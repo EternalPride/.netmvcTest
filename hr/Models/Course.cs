@@ -12,12 +12,11 @@ namespace hr.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Student
+    public partial class Course
     {
-        public string Sno { get; set; }
-        public string Sname { get; set; }
-        public string Ssex { get; set; }
-        public Nullable<decimal> Sage { get; set; }
-        public string Sdept { get; set; }
+        public string Cno { get; set; }
+        public string Cname { get; set; }
+        public string Cpno { get; set; }
+        public Nullable<decimal> Ccredit { get; set; }
     }
 }
