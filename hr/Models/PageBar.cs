@@ -14,6 +14,7 @@ namespace hr.Models
         /// <param name="PI">当前页</param>
         /// <param name="PC">数据总页</param>
         /// <returns></returns>
+        #region  原有方法
         public static string GetpageBar(int PI, int PC) 
         {
             if (PC == 1)
@@ -37,5 +38,6 @@ namespace hr.Models
             } if (PI < PC) { hr.Append(string.Format("<a href='?PI={0}'>下一页</a>", PI +1)); } 
             return hr.ToString();
         }
+        #endregion
     }
 }
