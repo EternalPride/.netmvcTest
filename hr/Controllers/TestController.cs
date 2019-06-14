@@ -46,5 +46,13 @@ namespace hr.Controllers
         //{
         //    return View();
         //}
+        public ActionResult s1() 
+        {
+            return View();
+        }
+        public ActionResult s2()
+        {
+            return View("s1");
+        }
 	}
 }

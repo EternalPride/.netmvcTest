@@ -248,6 +248,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\1.txt" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -346,6 +347,12 @@
     <Content Include="Views\Home\Phr.cshtml" />
     <Content Include="Views\Home\hr19.cshtml" />
     <Content Include="Views\Home\hr119.cshtml" />
+    <Content Include="Views\Test\s1.cshtml" />
+    <Content Include="Views\Test\s2.cshtml" />
+    <Content Include="Views\Home\s8.cshtml" />
+    <Content Include="Views\Home\s10.cshtml" />
+    <Content Include="Views\Home\s5.cshtml" />
+    <Content Include="Views\Home\s15.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
