@@ -163,6 +163,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PageBarController.cs" />
     <Compile Include="Controllers\SrtongController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -207,6 +208,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OTS.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PageBar.cs" />
     <Compile Include="Models\Paper.cs">
       <DependentUpon>OTS.tt</DependentUpon>
     </Compile>
@@ -353,6 +355,7 @@
     <Content Include="Views\Home\s10.cshtml" />
     <Content Include="Views\Home\s5.cshtml" />
     <Content Include="Views\Home\s15.cshtml" />
+    <Content Include="Views\PageBar\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

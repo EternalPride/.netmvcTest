@@ -1,0 +1,54 @@
+﻿@model IEnumerable<hr.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+@using hr.Models
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ssex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sdept)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ssex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sdept)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Sno }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Sno }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Sno })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.Raw(@PageBar.GetpageBar((int)@ViewBag.PI,10))
+</div>
