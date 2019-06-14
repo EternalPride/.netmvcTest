@@ -53,7 +53,7 @@ namespace hr.Controllers
            Models.StudentEntities db = new Models.StudentEntities();
 
            Models.Student s1 = db.Student.FirstOrDefault();
-            ViewBag["hr19"] = "";
+           ViewData["hr19"] = "分工不分蛋糕";
             return View(s1);
         }
         public ActionResult s5() 
